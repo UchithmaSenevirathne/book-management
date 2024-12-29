@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Add New Book</h2>
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="mt-4">
+      <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input 
+              type="text" 
+              class="form-control" 
+              id="title" 
+              formControlName="title"
+              [class.is-invalid]="bookForm.get('title')?.invalid && bookForm.get('title')?.touched">
+      </div>
+
+      <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input 
+              type="text" 
+              class="form-control" 
+              id="author" 
+              formControlName="author"
+              [class.is-invalid]="bookForm.get('author')?.invalid && bookForm.get('author')?.touched">
+      </div>
+
+      <div class="mb-3">
+          <label for="isbn" class="form-label">ISBN</label>
+          <input 
+              type="text" 
+              class="form-control" 
+              id="isbn" 
+              formControlName="isbn"
+              [class.is-invalid]="bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched">
+      </div>
+
+      <div class="mb-3">
+          <label for="publicationDate" class="form-label">Publication Date</label>
+          <input 
+              type="date" 
+              class="form-control" 
+              id="publicationDate" 
+              formControlName="publicationDate"
+              [class.is-invalid]="bookForm.get('publicationDate')?.invalid && bookForm.get('publicationDate')?.touched">
+      </div>
+
+      <button 
+          type="submit" 
+          class="btn btn-primary"
+          [disabled]="!bookForm.valid">
+          Add Book
+      </button>
+  </form>
+</div>

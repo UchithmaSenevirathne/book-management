@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Books List</h2>
+  <div class="table-responsive">
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>ISBN</th>
+                  <th>Publication Date</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let book of books">
+                  <td>{{ book.title }}</td>
+                  <td>{{ book.author }}</td>
+                  <td>{{ book.isbn }}</td>
+                  <td>{{ book.publicationDate | date }}</td>
+                  <td>
+                      <button (click)="editBook(book)" class="btn btn-primary me-2">Edit</button>
+                      <button (click)="deleteBook(book.id!)" class="btn btn-danger">Delete</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

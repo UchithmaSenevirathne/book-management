@@ -1,0 +1,21 @@
+# Dependencies
+**/node_modules/
+
+# Compiled output
+**/dist/
+**/tmp/
+**/out-tsc/
+
+# IDE files
+**/.idea/
+**/.vscode/
+**/.project
+**/.classpath
+**/.settings/
+
+# Logs
+**/*.log
+
+# System Files
+.DS_Store
+Thumbs.db
