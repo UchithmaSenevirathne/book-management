@@ -1,51 +1,101 @@
-<div class="container">
-  <h2>Add New Book</h2>
-  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="mt-4">
-      <div class="mb-3">
-          <label for="title" class="form-label">Title</label>
-          <input 
-              type="text" 
-              class="form-control" 
-              id="title" 
-              formControlName="title"
-              [class.is-invalid]="bookForm.get('title')?.invalid && bookForm.get('title')?.touched">
+<div class="container my-5">
+  <h2 class="text-center mb-4">Add New Book</h2>
+  <form
+    [formGroup]="bookForm"
+    (ngSubmit)="onSubmit()"
+    class="shadow-sm p-4 bg-light rounded"
+  >
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        formControlName="title"
+        placeholder="Enter book title"
+        [class.is-invalid]="
+          bookForm.get('title')?.invalid && bookForm.get('title')?.touched
+        "
+      />
+      <div
+        *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched"
+        class="invalid-feedback"
+      >
+        Title is required.
       </div>
+    </div>
 
-      <div class="mb-3">
-          <label for="author" class="form-label">Author</label>
-          <input 
-              type="text" 
-              class="form-control" 
-              id="author" 
-              formControlName="author"
-              [class.is-invalid]="bookForm.get('author')?.invalid && bookForm.get('author')?.touched">
+    <div class="mb-3">
+      <label for="author" class="form-label">Author</label>
+      <input
+        type="text"
+        class="form-control"
+        id="author"
+        formControlName="author"
+        placeholder="Enter author's name"
+        [class.is-invalid]="
+          bookForm.get('author')?.invalid && bookForm.get('author')?.touched
+        "
+      />
+      <div
+        *ngIf="
+          bookForm.get('author')?.invalid && bookForm.get('author')?.touched
+        "
+        class="invalid-feedback"
+      >
+        Author is required.
       </div>
+    </div>
 
-      <div class="mb-3">
-          <label for="isbn" class="form-label">ISBN</label>
-          <input 
-              type="text" 
-              class="form-control" 
-              id="isbn" 
-              formControlName="isbn"
-              [class.is-invalid]="bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched">
+    <div class="mb-3">
+      <label for="isbn" class="form-label">ISBN</label>
+      <input
+        type="text"
+        class="form-control"
+        id="isbn"
+        formControlName="isbn"
+        placeholder="Enter ISBN number"
+        [class.is-invalid]="
+          bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched
+        "
+      />
+      <div
+        *ngIf="bookForm.get('isbn')?.invalid && bookForm.get('isbn')?.touched"
+        class="invalid-feedback"
+      >
+        ISBN is required.
       </div>
+    </div>
 
-      <div class="mb-3">
-          <label for="publicationDate" class="form-label">Publication Date</label>
-          <input 
-              type="date" 
-              class="form-control" 
-              id="publicationDate" 
-              formControlName="publicationDate"
-              [class.is-invalid]="bookForm.get('publicationDate')?.invalid && bookForm.get('publicationDate')?.touched">
+    <div class="mb-3">
+      <label for="publicationDate" class="form-label">Publication Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="publicationDate"
+        formControlName="publicationDate"
+        [class.is-invalid]="
+          bookForm.get('publicationDate')?.invalid &&
+          bookForm.get('publicationDate')?.touched
+        "
+      />
+      <div
+        *ngIf="
+          bookForm.get('publicationDate')?.invalid &&
+          bookForm.get('publicationDate')?.touched
+        "
+        class="invalid-feedback"
+      >
+        Publication date is required.
       </div>
+    </div>
 
-      <button 
-          type="submit" 
-          class="btn btn-primary"
-          [disabled]="!bookForm.valid">
-          Add Book
-      </button>
+    <button
+      type="submit"
+      class="btn btn-primary w-100"
+      [disabled]="!bookForm.valid"
+    >
+      <i class="bi bi-book"></i> Add Book
+    </button>
   </form>
 </div>
