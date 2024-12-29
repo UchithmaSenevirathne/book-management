@@ -1,1 +1,1 @@
-[Watch Book Manager Video](./frontend/book-management-app/public/BookManager.mp4)
+[Watch Book Manager Video](https://drive.google.com/file/d/1BQ6GvqqkgheOuhYpq8MOFNnYVQZ8E9Gj/view?usp=drive_link)
