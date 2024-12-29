@@ -31,3 +31,4 @@ C:\Interview\Coding\book-management\backend\BookAPI\obj\Debug\net8.0\refint\Book
 C:\Interview\Coding\book-management\backend\BookAPI\obj\Debug\net8.0\BookAPI.pdb
 C:\Interview\Coding\book-management\backend\BookAPI\obj\Debug\net8.0\BookAPI.genruntimeconfig.cache
 C:\Interview\Coding\book-management\backend\BookAPI\obj\Debug\net8.0\ref\BookAPI.dll
+C:\Interview\Coding\book-management\backend\BookAPI\obj\Debug\net8.0\BookAPI.sourcelink.json

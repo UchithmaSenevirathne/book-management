@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h2>Books List</h2>
   <div class="table-responsive">
       <table class="table table-striped">
@@ -25,4 +25,73 @@
           </tbody>
       </table>
   </div>
-</div>
+</div> -->
+
+<div class="container">
+    <h2>Books List</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Publication Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books">
+            <ng-container *ngIf="isEditing && selectedBook?.id === book.id; else displayMode">
+              <td>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  [ngModel]="selectedBook?.title" 
+                  (ngModelChange)="updateSelectedBookField('title', $event)"
+                >
+              </td>
+              <td>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  [ngModel]="selectedBook?.author"
+                  (ngModelChange)="updateSelectedBookField('author', $event)"
+                >
+              </td>
+              <td>
+                <input 
+                  type="text" 
+                  class="form-control" 
+                  [ngModel]="selectedBook?.isbn"
+                  (ngModelChange)="updateSelectedBookField('isbn', $event)"
+                >
+              </td>
+              <td>
+                <input 
+                  type="date" 
+                  class="form-control" 
+                  [ngModel]="selectedBook?.publicationDate | date:'yyyy-MM-dd'"
+                  (ngModelChange)="updateSelectedBookField('publicationDate', $event)"
+                >
+              </td>
+              <td>
+                <button (click)="updateBook()" class="btn btn-success me-2">Save</button>
+                <button (click)="cancelEdit()" class="btn btn-secondary">Cancel</button>
+              </td>
+            </ng-container>
+            <ng-template #displayMode>
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.isbn }}</td>
+              <td>{{ book.publicationDate | date }}</td>
+              <td>
+                <button (click)="editBook(book)" class="btn btn-primary me-2">Edit</button>
+                <button (click)="deleteBook(book.id!)" class="btn btn-danger">Delete</button>
+              </td>
+            </ng-template>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
